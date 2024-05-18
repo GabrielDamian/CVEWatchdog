@@ -36,7 +36,7 @@ def append_to_file(text, cve_code, file_name):
     except Exception as e:
         print("A apărut o eroare în timpul adăugării textului în fișier:", str(e))
 def search_github_pull_requests(query, token, per_page, page, path_to_save,search_date_str ):
-    time.sleep(1)
+    time.sleep(3)
     url = 'https://api.github.com/search/issues'
     params = {'q': query, 'type': 'pr', 'per_page': per_page, 'page': page}
     params = {'q': f'{query} updated:{search_date_str}', 'type': 'pr', 'per_page': per_page, 'page': page}
@@ -70,11 +70,12 @@ def search_github_pull_requests(query, token, per_page, page, path_to_save,searc
 
 def main():
     load_dotenv()
-    token = os.getenv('GITHUB_TOKEN')  # citește token-ul din variabila de mediu
+    token = os.getenv('GITHUB_TOKEN')
+    print("token:",token)
 
     per_page = 100
     max_pages_per_day = 10
-    days_to_search = 30 #behind the current day
+    days_to_search = 14 #behind the current day
 
     #TODO: collect the next CVE codes list from the next link: https://www.cvedetails.com/vulnerability-list/vendor_id-12113/Nodejs.html
     #TODO: try also commits api, not only issues (pr) api
@@ -83,13 +84,13 @@ def main():
         'CVE-2024-3566',
         'CVE-2024-27983',
         'CVE-2024-30260',
-        'CVE-2024-30261',
-        'CVE-2024-22025',
-        'CVE-2024-22017',
-        'CVE-2024-22019',
-        'CVE-2024-21896',
-        'CVE-2024-21892',
-        'CVE-2024-21890',
+        # 'CVE-2024-30261',
+        # 'CVE-2024-22025',
+        # 'CVE-2024-22017',
+        # 'CVE-2024-22019',
+        # 'CVE-2024-21896',
+        # 'CVE-2024-21892',
+        # 'CVE-2024-21890',
     ]
 
     current_date = datetime.now().date()

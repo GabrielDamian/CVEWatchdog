@@ -74,7 +74,7 @@ def PODS_extractor():
 
 EXTRACTOR ={
     'NODE': NODE_extractor,
-    'SPRING':SPRING_extractor,
+    'SPRING': SPRING_extractor,
     'RUBY': RUBY_extractor,
     'PODS': PODS_extractor
 }
@@ -158,14 +158,14 @@ if __name__ == "__main__":
     cve_codes = [
         'CVE-2024-3566',
         'CVE-2024-27983',
-        'CVE-2024-30260',
-        'CVE-2024-30261',
-        'CVE-2024-22025',
-        'CVE-2024-22017',
-        'CVE-2024-22019',
-        'CVE-2024-21896',
-        'CVE-2024-21892',
-        'CVE-2024-21890',
+        # 'CVE-2024-30260',
+        # 'CVE-2024-30261',
+        # 'CVE-2024-22025',
+        # 'CVE-2024-22017',
+        # 'CVE-2024-22019',
+        # 'CVE-2024-21896',
+        # 'CVE-2024-21892',
+        # 'CVE-2024-21890',
     ]
 
     for cve_code in cve_codes:
